@@ -28,4 +28,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/website', function () {
+    return view('website.index');
+});
+
+Route::get('/users', function () {
+    return view('users.user');
+});
+
 require __DIR__.'/auth.php';

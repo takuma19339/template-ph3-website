@@ -32,8 +32,8 @@ Route::get('/website', function () {
     return view('website.index');
 });
 
-Route::get('/users', function () {
-    return view('users.user');
-});
+use App\Http\Controllers\UserController;
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
 
 require __DIR__.'/auth.php';

@@ -11,14 +11,14 @@ class QuizController extends Controller
     public function index()
     {
     $categories = Category::all();
-    $quizzes = Quiz::all();
         return view('quizzes.index', [
-            'quizzes' => $quizzes,
             'categories' => $categories,
         ]);
     }
-    public function show(Quiz $quiz)
+    public function show(Category $category)
     {
-        return view('quizzes.show', ['quiz' => $quiz]);
+        return view('quizzes.show', [
+            'category' => $category,
+        ]);
     }
 }

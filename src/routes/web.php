@@ -39,7 +39,7 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/quizzes', [QuizController::class, 'index'])->name('quizzes.index');
 
-Route::get('/quizzes/{quiz}', [QuizController::class, 'show'])->name('quizzes.show');
+Route::get('/quizzes/{category}', [QuizController::class, 'show'])->name('quizzes.show');
 
 
 require __DIR__.'/auth.php';

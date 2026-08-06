@@ -1,14 +1,11 @@
 <x-app-layout>
-    <x-slot name="header" />
+    <x-slot name="header">
+        クイズ一覧
+    </x-slot>
 @foreach($categories as $category)
-<div>
-        <h2>{{ $category->name }}</h2>
-        <ul>
-            @foreach($category->quizzes as $quiz)
-                <li><a href="{{ route('quizzes.show', $quiz) }}">{{ $quiz->question }}</a></li>
-            @endforeach
-        </ul>
-    </div>
+<div class="py-12">
+    <a href="{{ route('quizzes.show', $category) }}">{{ $category->name }}</a>
+</div>
 @endforeach
 
 </x-app-layout>

@@ -1,3 +1,5 @@
+<x-app-layout>
+    <x-slot name="header" />
 <div>
     <h1>{{ $quiz->question}}</h1>
     <br/>
@@ -7,3 +9,4 @@
     @endforeach
     </ul>
 </div>
+</x-app-layout>

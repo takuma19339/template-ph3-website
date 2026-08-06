@@ -37,6 +37,7 @@ Route::get('/website', function () {
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
+Route::get('/quizzes', [QuizController::class, 'index'])->name('quizzes.index');
 
 Route::get('/quizzes/{quiz}', [QuizController::class, 'show'])->name('quizzes.show');
 

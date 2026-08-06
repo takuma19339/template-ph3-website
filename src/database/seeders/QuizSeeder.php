@@ -46,7 +46,7 @@ class QuizSeeder extends Seeder
 
         $quiz = Quiz::create([
             'question' => 'リアライズシリウスの鞍上は誰？',
-            'category_id' => Category::where('name', 'introduction')->first()->id
+            'category_id' => Category::where('name', 'Introduction')->first()->id
         ]);
 
         $quiz->choices()->createMany([
@@ -57,7 +57,7 @@ class QuizSeeder extends Seeder
 
         $quiz = Quiz::create([
             'question' => '今年の宝塚記念王者は？',
-            'category_id' => Category::where('name', 'introduction')->first()->id
+            'category_id' => Category::where('name', 'Introduction')->first()->id
         ]);
 
         $quiz->choices()->createMany([

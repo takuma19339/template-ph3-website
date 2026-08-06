@@ -43,5 +43,27 @@ class QuizSeeder extends Seeder
             ['choice' => 'International Organization for Standardization', 'is_correct' => false],
             ['choice' => 'Interactive Online Training', 'is_correct' => false],
         ]);
+
+        $quiz = Quiz::create([
+            'question' => 'リアライズシリウスの鞍上は誰？',
+            'category_id' => Category::where('name', 'introduction')->first()->id
+        ]);
+
+        $quiz->choices()->createMany([
+            ['choice' => '武豊', 'is_correct' => false],
+            ['choice' => '横山武史', 'is_correct' => false],
+            ['choice' => '津村明秀', 'is_correct' => true],
+        ]);
+
+        $quiz = Quiz::create([
+            'question' => '今年の宝塚記念王者は？',
+            'category_id' => Category::where('name', 'introduction')->first()->id
+        ]);
+
+        $quiz->choices()->createMany([
+            ['choice' => 'クロワデュノール', 'is_correct' => false],
+            ['choice' => 'メイショウタバル', 'is_correct' => true],
+            ['choice' => 'アスクビクターモア', 'is_correct' => false],
+        ]);
     }
 }

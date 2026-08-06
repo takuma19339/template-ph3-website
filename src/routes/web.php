@@ -41,5 +41,9 @@ Route::get('/quizzes', [QuizController::class, 'index'])->name('quizzes.index');
 
 Route::get('/quizzes/{category}', [QuizController::class, 'show'])->name('quizzes.show');
 
+Route::get('/quizzes/{quiz}/edit', [QuizController::class, 'edit'])->name('quizzes.edit');
+
+Route::put('/quizzes/{quiz}', [QuizController::class, 'update'])->name('quizzes.update');
+
 
 require __DIR__.'/auth.php';

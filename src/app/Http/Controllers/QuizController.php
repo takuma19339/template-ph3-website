@@ -22,4 +22,18 @@ class QuizController extends Controller
             'category' => $category,
         ]);
     }
+    public function edit(Quiz $quiz)
+    {
+        return view('quizzes.edit', [
+            'quiz' => $quiz,
+        ]);
+    }
+    public function update(Request $request, Quiz $quiz)
+    {
+        $quiz->update([
+            'question' => $request->question,
+        ]);
+
+        return redirect()->route('quizzes.show', $quiz->category)->with('message','更新されました');
+    }
 }

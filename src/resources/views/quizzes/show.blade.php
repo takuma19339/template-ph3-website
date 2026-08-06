@@ -7,6 +7,7 @@
     @foreach($category->quizzes as $quiz)
     <div class="m-12">
         <h1>{{ $quiz->question}}</h1>
+        <a href="{{ route('quizzes.edit', $quiz) }}" class="text-blue-500">編集</a>
         <br/>
         <ul>
             @foreach ($quiz->choices as $choice)
@@ -15,6 +16,11 @@
         </ul>
         <br/>
     </div>
+    @if(session('message'))
+        <div class="text-green-500">
+            {{ session('message') }}
+        </div>
+    @endif
     @endforeach
     </ul>
 </div>

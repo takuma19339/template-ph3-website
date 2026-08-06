@@ -5,14 +5,16 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Quiz;
+use App\Models\Category;
 
 class QuizSeeder extends Seeder
 {
     public function run(): void
     {
         $quiz = Quiz::create([
-            'question' => '日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？']);
-            'category_id' => Category::where('name', 'IT')->first()->id;
+            'question' => '日本のIT人材が2030年には最大どれくらい不足すると言われているでしょうか？',
+            'category_id' => Category::where('name', 'IT')->first()->id
+        ]);
 
         $quiz->choices()->createMany([
             ['choice' => '約79万人', 'is_correct' => false],
@@ -21,7 +23,7 @@ class QuizSeeder extends Seeder
         ]);
 
         $quiz = Quiz::create([
-            'question' => '既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？'],
+            'question' => '既存業界のビジネスと、先進的なテクノロジーを結びつけて生まれた、新しいビジネスのことをなんと言うでしょう？',
             'category_id' => Category::where('name', 'IT')->first()->id,
         ]);
 

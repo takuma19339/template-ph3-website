@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\QuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +34,11 @@ Route::get('/website', function () {
     return view('website.index');
 });
 
-use App\Http\Controllers\UserController;
+
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+
+Route::get('/quizzes/{quiz}', [QuizController::class, 'show'])->name('quizzes.show');
 
 
 require __DIR__.'/auth.php';

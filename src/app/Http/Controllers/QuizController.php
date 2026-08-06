@@ -17,6 +17,7 @@ class QuizController extends Controller
     }
     public function show(Category $category)
     {
+        $category->load('quizzes.choices');
         return view('quizzes.show', [
             'category' => $category,
         ]);

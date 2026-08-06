@@ -10,7 +10,7 @@
         <br/>
         <ul>
             @foreach ($quiz->choices as $choice)
-            <li>{{ $choice->choice }}</li>
+            <li class="choice" data-correct="{{ $choice->is_correct ? 'true' :'false' }}">{{ $choice->choice }}</li>
             @endforeach
         </ul>
         <br/>
@@ -19,3 +19,17 @@
     </ul>
 </div>
 </x-app-layout>
+
+<script>
+    const choices = document.querySelectorAll('.choice');
+    choices.forEach(choice => {
+        choice.addEventListener('click', () => {
+            const isCorrect = choice.dataset.correct === 'true';
+            if (isCorrect) {
+                choice.innerHTML += '   正解です！';
+            } else {
+                choice.innerHTML += '   不正解です。';
+            }
+        });
+    });
+</script>

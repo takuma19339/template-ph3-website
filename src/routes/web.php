@@ -45,5 +45,6 @@ Route::get('/quizzes/{quiz}/edit', [QuizController::class, 'edit'])->name('quizz
 
 Route::put('/quizzes/{quiz}', [QuizController::class, 'update'])->name('quizzes.update');
 
+Route::delete('/quizzes/{quiz}', [QuizController::class, 'destroy'])->name('quizzes.destroy');
 
 require __DIR__.'/auth.php';

@@ -36,4 +36,9 @@ class QuizController extends Controller
 
         return redirect()->route('quizzes.show', $quiz->category)->with('message','更新されました');
     }
+    public function destroy(Quiz $quiz)
+    {
+        $quiz->delete();
+        return redirect()->route('quizzes.show', $quiz->category)->with('message','削除されました');
+    }
 }

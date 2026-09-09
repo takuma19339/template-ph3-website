@@ -34,6 +34,12 @@ Route::get('/website', function () {
     return view('website.index');
 });
 
+Route::middleware('admin')->prefix('admin')->group(function(){
+    Route::get('/quizzes', [AdminQuizController::class, 'index'])->name('admin.quizzes.index');
+    Route::get('/quizzes/{quiz}/edit', [AdminQuizController::class, 'edit'])->name('admin.quizzes.edit');
+    Route::put('/quizzes/{quiz}', [AdminQuizController::class, 'update'])->name('admin.quizzes.update');
+});
+
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 

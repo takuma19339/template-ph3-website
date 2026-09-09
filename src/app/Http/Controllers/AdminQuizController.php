@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Quiz;
 
 class AdminQuizController extends Controller
 {
@@ -13,7 +14,7 @@ class AdminQuizController extends Controller
             'quizzes' => $quizzes,
         ]);
     }
-    public function show(Category $category)
+
     public function edit(Quiz $quiz)
     {
         return view('admin.quizzes.edit', [
@@ -26,7 +27,7 @@ class AdminQuizController extends Controller
             'question' => $request->question,
         ]);
 
-        return redirect()->route('admin.quizzes.show')->with('message','更新されました');
+        return redirect()->route('admin.quizzes.index')->with('message','更新されました');
     }
 
     }//

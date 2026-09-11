@@ -29,6 +29,5 @@ class AdminQuizController extends Controller
 
         return redirect()->route('admin.quizzes.index')->with('message','更新されました');
     }
-
-    }//
+}
 

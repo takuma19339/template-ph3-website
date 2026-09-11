@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\AdminQuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +48,9 @@ Route::get('/quizzes', [QuizController::class, 'index'])->name('quizzes.index');
 
 Route::get('/quizzes/{category}', [QuizController::class, 'show'])->name('quizzes.show');
 
-Route::get('/quizzes/{quiz}/edit', [QuizController::class, 'edit'])->name('quizzes.edit');
 
-Route::put('/quizzes/{quiz}', [QuizController::class, 'update'])->name('quizzes.update');
+
+
 
 Route::delete('/quizzes/{quiz}', [QuizController::class, 'destroy'])->name('quizzes.destroy');
 
